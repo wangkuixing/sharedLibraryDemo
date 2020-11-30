@@ -1,11 +1,16 @@
-@Library('sharedLibrary') _
+
+@Library('jenkinslib') _
+
+def tools = new com.binks.jenkins.tools()
+
 pipeline {
     agent any
     stages {
         stage("第一步") {
             steps {
                 script {
-                    execShell("我是一个执行sh命令的例子")
+                    execShell()
+                    tools.PrintMes("Hello Binks!")
                 }
             }
         }
